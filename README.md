@@ -1,4 +1,4 @@
-# Matter-YAML-Node
+# Matter YAML (NODE)
 
 A simple utility for parsing, serializing, and validating YAML front matter in Node.js.
 
