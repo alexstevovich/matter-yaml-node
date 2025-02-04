@@ -8,9 +8,9 @@ const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]+?)\r?\n---\r?\n([\s\S]*)$/;
  * @returns {object} - An object containing `data` (parsed YAML) and `content` (raw content).
  * @throws {Error} - If the input is not a string or the format is invalid.
  */
-export function parseMatter(text) {
+export function parse(text) {
     if (typeof text !== 'string') {
-        throw new TypeError(`parseMatter expected a string, but received ${typeof text}.`);
+        throw new TypeError(`parse expected a string, but received ${typeof text}.`);
     }
 
     const match = text.match(FRONT_MATTER_REGEX);
@@ -33,12 +33,12 @@ export function parseMatter(text) {
  * @returns {string} - The serialized front matter and content.
  * @throws {Error} - If the data is not an object or the content is not a string.
  */
-export function serializeMatter(data, content) {
+export function serialize(data, content) {
     if (typeof data !== 'object' || data === null) {
-        throw new TypeError(`serializeMatter expected an object, but received ${typeof data}.`);
+        throw new TypeError(`serialize expected an object, but received ${typeof data}.`);
     }
     if (typeof content !== 'string') {
-        throw new TypeError(`serializeMatter expected a string, but received ${typeof content}.`);
+        throw new TypeError(`serialize expected a string, but received ${typeof content}.`);
     }
 
     const frontMatter = yaml.dump(data).trim();
@@ -50,7 +50,7 @@ export function serializeMatter(data, content) {
  * @param {string} text - The full content to validate.
  * @returns {boolean} - `true` if the format is valid and YAML is parsable, otherwise `false`.
  */
-export function validateMatter(text) {
+export function validate(text) {
     if (typeof text !== 'string') {
         return false;
     }
@@ -68,4 +68,4 @@ export function validateMatter(text) {
     }
 }
 
-export default {parseMatter, serializeMatter, validateMatter}
+export default {parse, serialize, validate}
