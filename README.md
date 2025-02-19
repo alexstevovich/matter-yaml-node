@@ -48,8 +48,8 @@ console.log(isValid); // true or false
 ### `parse(text: string): { data: object, content: string }`
 Parses YAML front matter from a given text input.
 
-### `serialize(data: object, content: string): string`
-Serializes an object and content into a YAML front matter formatted string.
+### `serialize(data: object, content: string, options?: object): string`
+Serializes an object and content into a YAML front matter formatted string. The `options` parameter accepts [js-yaml dump options](https://github.com/nodeca/js-yaml#dump-object---options-) for customizing the YAML output.
 
 ### `validate(text: string): boolean`
 Checks if a given text has valid YAML front matter.
