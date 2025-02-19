@@ -30,18 +30,19 @@ function parse(text) {
  * Serializes data and content into a combined string.
  * @param {object} data - An object representing the front matter (YAML).
  * @param {string} content - The main content as a string.
+ * @param options - Optional YAML dump configuration options.
  * @returns {string} - The serialized front matter and content.
  * @throws {Error} - If the data is not an object or the content is not a string.
  */
-function serialize(data, content) {
-    if (typeof data !== "object" || data === null) {
+function serialize(data, content, options = {}) {
+    if (typeof data !== 'object' || data === null) {
         throw new TypeError(`serialize expected an object, but received ${typeof data}.`);
     }
-    if (typeof content !== "string") {
+    if (typeof content !== 'string') {
         throw new TypeError(`serialize expected a string, but received ${typeof content}.`);
     }
 
-    const frontMatter = yaml.dump(data).trim();
+    const frontMatter = yaml.dump(data, options).trim();
     return `---\n${frontMatter}\n---\n${content}`;
 }
 

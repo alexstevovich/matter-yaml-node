@@ -1,4 +1,4 @@
-import { parse, serialize, validate } from "../src/matter-yaml.js";
+import { parse, serialize, validate } from "../src/matter-yaml.mjs";
 
 const text = `---
 title: Test Title

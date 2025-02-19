@@ -2,17 +2,21 @@
   "name": "matter-yaml",
   "version": "1.0.0",
   "description": "A simple utility for parsing and serializing YAML front matter.",
-  "main": "src/matter-yaml.js",
+  "main": "src/matter-yaml.mjs",
   "types": "./matter-yaml.d.ts",
-  "module": "src/matter-yaml.js",
+  "module": "src/matter-yaml.mjs",
   "type": "module",
   "exports": {
-    "import": "./src/matter-yaml.js",
+    "import": "./src/matter-yaml.mjs",
     "require": "./src/matter-yaml.cjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
-  },
+  },"scripts": {
+  "test:mjs": "node ./test/matter-yaml.test.mjs",
+  "test:cjs": "node ./test/matter-yaml.test.cjs",
+  "test": "npm run test:mjs && npm run test:cjs"
+},
   "repository": {
     "type": "git",
     "url": "https://github.com/alexstevovich/matter-yaml-node.git"
