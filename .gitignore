@@ -30,5 +30,5 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# My Stuff
+# My Tools
 push-to-remotes.bat

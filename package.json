@@ -1,19 +1,24 @@
 {
-    "name": "matter-yaml",
-    "version": "1.0.0",
-    "description": "A simple utility for parsing and serializing YAML front matter.",
-    "main": "src/matter-yaml.js",
-    "types": "index.d.ts",
-    "module": "src/matter-yaml.js",
-    "type": "module",
-    "dependencies": {
-      "js-yaml": "^4.1.0"
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/astevovich/matter-yaml"
-    },
-    "keywords": ["yaml", "front matter", "markdown", "parsing", "serialization"],
-    "author": "YOUR NAME",
-    "license": "MIT"
-  }
+  "name": "matter-yaml",
+  "version": "1.0.0",
+  "description": "A simple utility for parsing and serializing YAML front matter.",
+  "main": "src/matter-yaml.js",
+  "types": "./matter-yaml.d.ts",
+  "module": "src/matter-yaml.js",
+  "type": "module",
+  "exports": {
+    "import": "./src/matter-yaml.js",
+    "require": "./src/matter-yaml.cjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexstevovich/matter-yaml-node.git"
+  },
+  "keywords": ["yaml", "front matter", "markdown", "parsing", "serialization"],
+  "author": "Alex Stevovich",
+  "license": "MIT",
+  "files": ["src/"]
+}
